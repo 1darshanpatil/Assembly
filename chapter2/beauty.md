@@ -108,10 +108,97 @@ hexdump -C exit
 This will show you a hex dump of the entire file, not just the executable sections.
 
 
-* **readlf:** To see more detailed information about the binary, you can see `readlf`
+* **readelf:** To see more detailed information about the binary, you can see `readelf`
 ```bash
-readlf -a exit
+readelf -a exit
 ```
+
+```bash
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x401000
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          4312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         4
+  Size of section headers:           64 (bytes)
+  Number of section headers:         6
+  Section header string table index: 5
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .note.gnu.pr[...] NOTE             0000000000400120  00000120
+       0000000000000030  0000000000000000   A       0     0     8
+  [ 2] .text             PROGBITS         0000000000401000  00001000
+       000000000000000c  0000000000000000  AX       0     0     1
+  [ 3] .symtab           SYMTAB           0000000000000000  00001010
+       0000000000000078  0000000000000018           4     1     8
+  [ 4] .strtab           STRTAB           0000000000000000  00001088
+       0000000000000019  0000000000000000           0     0     1
+  [ 5] .shstrtab         STRTAB           0000000000000000  000010a1
+       0000000000000034  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), l (large), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  LOAD           0x0000000000000000 0x0000000000400000 0x0000000000400000
+                 0x0000000000000150 0x0000000000000150  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000401000 0x0000000000401000
+                 0x000000000000000c 0x000000000000000c  R E    0x1000
+  NOTE           0x0000000000000120 0x0000000000400120 0x0000000000400120
+                 0x0000000000000030 0x0000000000000030  R      0x8
+  GNU_PROPERTY   0x0000000000000120 0x0000000000400120 0x0000000000400120
+                 0x0000000000000030 0x0000000000000030  R      0x8
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .note.gnu.property 
+   01     .text 
+   02     .note.gnu.property 
+   03     .note.gnu.property 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+No processor specific unwind information to decode
+
+Symbol table '.symtab' contains 5 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000401000     0 NOTYPE  GLOBAL DEFAULT    2 _start
+     2: 0000000000402000     0 NOTYPE  GLOBAL DEFAULT    2 __bss_start
+     3: 0000000000402000     0 NOTYPE  GLOBAL DEFAULT    2 _edata
+     4: 0000000000402000     0 NOTYPE  GLOBAL DEFAULT    2 _end
+
+No version information found in this file.
+
+Displaying notes found in: .note.gnu.property
+  Owner                Data size 	Description
+  GNU                  0x00000020	NT_GNU_PROPERTY_TYPE_0
+      Properties: x86 feature used: x86
+	x86 ISA used: 
+```
+
 
 These tools will give you a comprehensive view of the machine code and the structure of your binary file.
 
