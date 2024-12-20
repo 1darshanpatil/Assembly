@@ -12,3 +12,7 @@ A few books that Im using for these repository, this also includes Intel Archite
 |Programming From The Ground Up|Jonathan Bartlett|
 |Low-Level Programming C, Assembly, and Program Execution on Intel 64 Architecture| Igor Zhirkov|
 |Intel 64 and IA-32 Architecture Software Developer's Manual Combined Volumes 1, 2A, 2B, 2C, 2D, 3A, 3B, 3C, 3D, and 4 | Intel Corp.|
+
+Please install **[eternan/edb-debugger](https://github.com/eteran/edb-debugger)**
+`edb` is a cross platform AArch32/x86/x86-64 debugger.
+![Screenshot From 2024-12-20 15-47-54](https://github.com/user-attachments/assets/e7667ea3-0639-4a90-8bdd-8948f7805674)
