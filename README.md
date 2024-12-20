@@ -14,5 +14,8 @@ A few books that Im using for these repository, this also includes Intel Archite
 |Intel 64 and IA-32 Architecture Software Developer's Manual Combined Volumes 1, 2A, 2B, 2C, 2D, 3A, 3B, 3C, 3D, and 4 | Intel Corp.|
 
 Please install **[eternan/edb-debugger](https://github.com/eteran/edb-debugger)**
-`edb` is a cross platform AArch32/x86/x86-64 debugger.
+
+**edb-debugger** helps assembly programmers by providing low-level debugging, allowing step-through execution, memory inspection, and breakpoint management across multiple architectures. It supports AArch32, x86, and x86-64, making it ideal for reverse engineering and debugging assembly code.
+
+
 ![Screenshot From 2024-12-20 15-47-54](https://github.com/user-attachments/assets/e7667ea3-0639-4a90-8bdd-8948f7805674)
