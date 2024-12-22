@@ -1,5 +1,5 @@
 # ############################################################################################################
-# rip_explanation.s
+# direct.s
 #
 # This file demonstrates loading a 64-bit value from the .data section into %rax using RIP-relative
 # addressing "myVar(%rip)". It includes an exhaustive explanation of:
