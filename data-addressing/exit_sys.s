@@ -60,6 +60,9 @@
 #     For instance:
 #       • The AMD64 ABI Supplement:
 #           https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf
+#        
+#       FIND SNAPSHOT: https://github.com/1darshanpatil/Assembly/blob/main/data-addressing/syscall-exit.png
+#       
 #       • The Linux kernel docs (search for "x86 syscall calling convention").
 #   - So NO, we cannot just pick a different register. The kernel specifically checks %rax
 #     to see which syscall you want.
