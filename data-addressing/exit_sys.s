@@ -261,6 +261,43 @@
 #   - Then "syscall" transitions to the kernel with those register values. The kernel sees
 #     "Oh, 60? That’s sys_exit. The exit code is in %rdi => 0. Let's terminate the process."
 #
+#
+# Official References & Links:
+#
+# 1) **System V AMD64 ABI** (Application Binary Interface)
+#    - Explains the calling conventions, including how registers (%rax, %rdi, etc.) 
+#      are used for arguments and syscall numbers in x86-64. 
+#    - The latest official PDF is often found here:
+#        https://refspecs.linuxfoundation.org/elf/x86_64-abi-0.99.pdf
+#
+# 2) **Linux Man Pages** for System Calls
+#    - "man 2 syscall" and "man 2 syscalls" provide an overview of how syscalls work
+#      on Linux, including the use of registers and the difference from normal functions.
+#    - Example: https://man7.org/linux/man-pages/man2/syscall.2.html
+#
+# 3) **Intel 64 and IA-32 Architectures Software Developer’s Manual**
+#    - Describes the SYSCALL/SYSRET instructions, ring transitions, and the CPU-level details
+#      of how user code enters kernel mode. 
+#    - Official Intel site: 
+#        https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
+#      (see Vol. 2 for the instruction set reference).
+#
+# 4) **AMD64 Architecture Programmer’s Manual** (if using AMD processors)
+#    - Similar coverage of SYSCALL, SYSRET, privilege levels, etc. 
+#    - Hosted on AMD’s developer site:
+#        https://www.amd.com/en/support/tech-docs/amd64-architecture-programmers-manual
+#
+# 5) **Linux Kernel Source & Documentation**
+#    - The kernel code shows exactly how each syscall number is mapped and implemented. 
+#    - For instance, look under:
+#        arch/x86/entry/syscalls/syscall_64.tbl (to see syscall numbers)
+#        Documentation/userspace-api/syscall-user-dispatch.rst (for some details on syscalls)
+#    - Available at https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 
+#
+# These sources confirm why syscalls are not just normal function calls (due to ring transitions),
+# how %rax holds the syscall number, how arguments go into %rdi, %rsi, etc., and how the CPU 
+# switches from ring 3 to ring 0 using SYSCALL/SYSRET rather than CALL/RET.
+#
 # --------------------------------------------------------------------------------
 # (7) Where can I find a list of all syscalls and official references?
 #
