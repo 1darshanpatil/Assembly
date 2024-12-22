@@ -1,4 +1,4 @@
-#############################################################################################################
+# ############################################################################################################
 # You may get a nonsense error like below:
 # exit_deep_explanation.s: Assembler messages:
 # exit_deep_explanation.s: Warning: end of file not at end of a line; newline inserted
@@ -12,9 +12,9 @@
 # <---New Line--->
 #
 # if you do not have <---New Line---> then the above error:)
-#############################################################################################################
+# ############################################################################################################
 
-#############################################################################################################
+# ############################################################################################################
 # Explanation (Theory):
 #
 # We want to exit a Linux x86-64 process with code 0 by making a system call. The snippet is:
@@ -331,7 +331,7 @@
 # - We use '%rax' because the ABI demands it.
 # - We do 'xorq %rdi, %rdi' because the exit code must be in %rdi, and we want 0.
 # - "syscall" is how we jump from ring 3 (user mode) to ring 0 (kernel mode) to actually run exit code.
-#############################################################################################################
+# ############################################################################################################
 
         .section .text
         .globl _start

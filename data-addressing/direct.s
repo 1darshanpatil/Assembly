@@ -1,4 +1,4 @@
-# # ###########################################################################################################
+# ############################################################################################################
 # rip_explanation.s
 #
 # This file demonstrates loading a 64-bit value from the .data section into %rax using RIP-relative
@@ -10,7 +10,7 @@
 #   4) What special-purpose registers are (like %rip, %rsp, %rbp, etc.).
 #
 # Finally, it shows a minimal syscall (#60 => sys_exit) so the program ends gracefully.
-# # ###########################################################################################################
+# ############################################################################################################
 
         .section .data
 
@@ -142,4 +142,4 @@ _start:
 #   %rip => special register (Instruction Pointer); you can’t do movq $123, %rip.
 #   You change %rip via jumps/calls. 
 #   Special-purpose registers => CPU-defined roles; not for free-form data storage.
-# # ###########################################################################################################
+# ############################################################################################################
